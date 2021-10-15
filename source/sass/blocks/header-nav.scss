@@ -7,3 +7,11 @@
     height: 17px;
   }
 }
+
+.header-nav__phone-number {
+  color: $deep-black;
+
+  &:hover {
+    color: $basic-accent;
+  }
+}
