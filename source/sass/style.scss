@@ -1,11 +1,11 @@
 // Начните писать стили здесь
 @import "global/variables";
-//@import "global/fonts";
+@import "global/fonts";
+@import "blocks/page-body";
+@import "global/visually-hidden";
 //@import "global/mixins";
-//@import "global/visually-hidden";
 //@import "blocks/common-header";
 //@import "global/tags";
-//@import "blocks/page-body";
 //@import "blocks/page-header";
 //@import "blocks/header-nav";
 //@import "blocks/main-list";
