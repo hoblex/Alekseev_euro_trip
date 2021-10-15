@@ -12,7 +12,24 @@
 <header class="page-header">
     <h1 class="visually-hidden">Сайт Путешествие по Европе</h1>
     <nav class="header-nav header-nav--nojs">
-
+        <a class="header-nav__logo-link ">
+            <picture class="header-nav__logo-image">
+                <source media="(max-width: 1023px)" srcset="img/way-logo-mobile.svg">
+                <img src="img/way-logo-desktop.svg" alt="Путешествие по Европе" width="58" height="22">
+            </picture>
+        </a>
+        <ul class="header-nav__list main-list">
+            <li class="main-list__item"><a href="#">О путешествии</a></li>
+            <li class="main-list__item"><a href="#">Цены</a></li>
+        </ul>
+        <div class="header-nav__phone">
+            <a href="tel:+78125550500" class="header-nav__phone-number">
+                <svg class="header-nav__phone-icon" width="18" height="18">
+                    <use xlink:href="img/sprite.svg#icon-phone"></use>
+                </svg>
+                <span>+7&nbsp;(499)&nbsp;784-684-46</span>
+            </a>
+        </div>
     </nav>
 </header>
 <main class="page-main">
