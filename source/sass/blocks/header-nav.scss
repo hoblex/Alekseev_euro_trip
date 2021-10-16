@@ -13,5 +13,14 @@
 
   &:hover {
     color: $basic-accent;
+
+    & .header-nav__phone-icon {
+      stroke: $basic-accent;
+    }
   }
+}
+
+.header-nav__phone-icon {
+  stroke: black;
+  fill: none;
 }
