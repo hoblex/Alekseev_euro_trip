@@ -1,0 +1,9 @@
+.overviews {
+  background-size: 1443px;
+  background-repeat: no-repeat;
+  background-image: url('../img/europe-map.png');
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/europe-map@2x.jpg");
+  }
+}

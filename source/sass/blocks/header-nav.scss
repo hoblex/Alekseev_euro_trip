@@ -9,7 +9,7 @@
 }
 
 .header-nav__phone-number {
-  color: $deep-black;
+  color: $basic-black;
 
   &:hover {
     color: $basic-accent;
@@ -21,6 +21,6 @@
 }
 
 .header-nav__phone-icon {
-  stroke: black;
+  stroke: $basic-black;
   fill: none;
 }
