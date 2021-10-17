@@ -1,7 +1,15 @@
 .introduction {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 185px;
+  padding-left: 1175px;
+  color: $basic-white;
   background-size: 1920px;
   min-height: 860px;
   background-repeat: no-repeat;
+  background-position: center;
   background-image: url('../img/introduction-desktop.jpg');
 
   @media (min-resolution: 2dppx) {
@@ -24,5 +32,34 @@
     @media (min-resolution: 2dppx) {
       background-image: url("../img/introduction-mobile@2x.jpg");
     }
+  }
+}
+
+.introduction__header {
+  font-size: 55px;
+  font-weight: 600;
+  line-height: 80px;
+  max-width: 412px;
+}
+
+.introduction__description {
+  width: 376px;
+  font-size: 16px;
+  line-height: 27px;
+}
+
+.introduction__link {
+  text-decoration: none;
+  color: $basic-white;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-image: url("../img/icons/icon-arrow.svg");
+    top: 15px;
+    right: 20px;
   }
 }

@@ -1,0 +1,21 @@
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  width: 196px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: auto;
+}
+
+.nav-list__item a {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 17px;
+  color: $basic-black;
+
+  &:hover {
+    color: $basic-accent;
+  }
+}

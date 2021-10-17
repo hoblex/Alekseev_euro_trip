@@ -1,6 +1,26 @@
+.header-nav {
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 1024px;
+  width: 100%;
+}
+
+.header-nav__logo-link {
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 58px;
+  margin-left: 0;
+  margin-right: auto;
+}
+
 .header-nav__logo-link img {
   width: 58px;
   height: 22px;
+  margin-right: auto;
 
   @media (max-width: 1023px) {
     width: 44px;
@@ -8,8 +28,19 @@
   }
 }
 
+.header-nav__phone {
+  width: 230px;
+}
+
 .header-nav__phone-number {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  width: 230px;
   color: $basic-black;
+  height: 32px;
+  font-size: 18px;
+  line-height: 32px;
 
   &:hover {
     color: $basic-accent;
@@ -23,4 +54,11 @@
 .header-nav__phone-icon {
   stroke: $basic-black;
   fill: none;
+  width: 30px;
+  height: 30px;
+}
+
+
+.header-nav__list {
+  padding: 0;
 }

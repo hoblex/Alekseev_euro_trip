@@ -18,9 +18,9 @@
                 <img src="img/way-logo-desktop.svg" alt="Путешествие по Европе" width="58" height="22">
             </picture>
         </a>
-        <ul class="header-nav__list main-list">
-            <li class="main-list__item"><a href="#">О путешествии</a></li>
-            <li class="main-list__item"><a href="#">Цены</a></li>
+        <ul class="header-nav__list nav-list">
+            <li class="nav-list__item"><a href="#">О путешествии</a></li>
+            <li class="nav-list__item"><a href="#">Цены</a></li>
         </ul>
         <div class="header-nav__phone">
             <a href="tel:+749978468446" class="header-nav__phone-number">
@@ -35,8 +35,8 @@
 <main class="page-main">
     <section    class="introduction">
         <h2 class="introduction__header">Путешествие по Европе</h2>
-        <p  class="introduction__description">В этом туре вы откроете для себя Европу в новом свете. Вас ждет: море, горы</p>
-        <a href="#" class="introduction__link">Смотреть тур</a>
+        <p  class="introduction__description">В этом туре вы откроете для себя Европу в новом свете. Вас ждет: море, горы, а также потрясающая красота природы.</p>
+        <a href="#places-overview" class="regular-button introduction__link">Смотреть тур</a>
     </section>
     <section    class="places">
         <h2 class="places__header">Места посещения</h2>
@@ -108,7 +108,7 @@
                 </a>
             </li>
         </ul>
-        <div  class="places__overviews  overviews">
+        <div  class="places__overviews  overviews"  id="places-overview">
             <div    class="overviews__nav slider-nav">
                 <button class="slider-nav__button">Греция</button>
                 <button class="slider-nav__button">Албания</button>
@@ -119,7 +119,7 @@
             <div  class="overviews__item  overview  overviews__item--current">
                 <h3 class="overview__header">Греция</h3>
                 <p  class="overview__text">На севере Греции находится один из крупнейших комплексов монастырей, расположенных на вершинах скал. Название его «Метеора» буквально переводится как «висящие в воздухе». Этот монастырь основная цель нашего путешествия в Греции. После покарения скал из песчанника и обломочной горной породы, достигающих в высоту 600 метров, наградой будет неописуемая красота природы и атмосфера, царящая в монастырях Метеоры. </p>
-                <a class="overview__order-link">Купить тур сейчас</a>
+                <a class="regular-button overview__order-link">Купить тур сейчас</a>
                 <div  class="overview__image-container">
                     <picture class="overview__image">
                         <source type="image/webp" media="(max-width: 767px)" srcset="img/greece-overview-mobile.webp 1x, img/greece-overview-mobile@2x.webp 2x">
@@ -140,7 +140,7 @@
             <div  class="overviews__item  overview">
                 <h3 class="overview__header">Албания</h3>
                 <p  class="overview__text">В Албании мы посетим Курорт Ксамиль. Этот курорт поразит вас чистейшей водой и удивительным пляжем. Вначале кажется, что на пляже вас встречает обычный, правда невероятно белоснежный и слишком крупный песок. Однако, присмотревшись, можно понять, что это не песок, а камни, перетёртые до такого мелкого состояния. </p>
-                <a class="overview__order-link">Купить тур сейчас</a>
+                <a class="regular-button overview__order-link">Купить тур сейчас</a>
                 <div  class="overview__image-container">
                     <picture class="overview__image">
                         <source type="image/webp" media="(max-width: 767px)" srcset="img/albania-overview-mobile.webp 1x, img/albania-overview-mobile@2x.webp 2x">
@@ -160,7 +160,7 @@
             <div  class="overviews__item  overview">
                 <h3 class="overview__header">Македония</h3>
                 <p  class="overview__text">В Македонии нашей целью будет посетить Палаошник, который расположился в удивительно красивой лесистой местности возле Охридского озера и Самуиловой твердыни. А также мы заберемся на вершину горы Татичев Камен где находится  археологический памятник Кокино в длину около 100 метров.</p>
-                <a class="overview__order-link">Купить тур сейчас</a>
+                <a class="regular-button overview__order-link">Купить тур сейчас</a>
                 <div  class="overview__image-container">
                     <picture class="overview__image">
                         <source type="image/webp" media="(max-width: 767px)" srcset="img/macedonia-overview-mobile.webp 1x, img/macedonia-overview-mobile@2x.webp 2x">
@@ -270,7 +270,7 @@
             <label class="feedback__form-label">
                 <input type="email"  placeholder="E-mail"  class="feedback__form-control">
             </label>
-            <button class="feedback__form-submit" type="submit">Отправить</button>
+            <button class="regular-button feedback__form-submit" type="submit">Отправить</button>
         </form>
     </section>
 </main>
