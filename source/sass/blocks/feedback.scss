@@ -1,0 +1,21 @@
+.feedback {
+  background-size: 844px;
+  background-repeat: no-repeat;
+  background-image: url('../img/feedback-desktop.png');
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/feedback-desktop@2x.png");
+  }
+
+  @media (max-width: $desktop-width - 1) {
+    background-size: $tablet-width;
+    background-image: url('../img/feedback-tablet.png');
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/feedback-tablet@2x.png");
+    }
+  }
+  @media (max-width: $tablet-width - 1) {
+    background-image: none;
+  }
+}
