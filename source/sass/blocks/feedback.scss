@@ -1,18 +1,18 @@
 .feedback {
   background-size: 844px;
   background-repeat: no-repeat;
-  background-image: url('../img/feedback-desktop.png');
+  background-image: url('../img/feedback-desktop.jpg');
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../img/feedback-desktop@2x.png");
+    background-image: url("../img/feedback-desktop@2x.jpg");
   }
 
   @media (max-width: $desktop-width - 1) {
     background-size: $tablet-width;
-    background-image: url('../img/feedback-tablet.png');
+    background-image: url('../img/feedback-tablet.jpg');
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/feedback-tablet@2x.png");
+      background-image: url("../img/feedback-tablet@2x.jpg");
     }
   }
   @media (max-width: $tablet-width - 1) {

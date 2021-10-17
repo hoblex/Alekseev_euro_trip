@@ -2,27 +2,27 @@
   background-size: 1920px;
   min-height: 860px;
   background-repeat: no-repeat;
-  background-image: url('../img/introduction-desktop.png');
+  background-image: url('../img/introduction-desktop.jpg');
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../img/introduction-desktop@2x.png");
+    background-image: url("../img/introduction-desktop@2x.jpg");
   }
 
   @media (max-width: $desktop-width - 1) {
     background-size: 768px;
-    background-image: url('../img/introduction-tablet.png');
+    background-image: url('../img/introduction-tablet.jpg');
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/introduction-tablet@2x.png");
+      background-image: url("../img/introduction-tablet@2x.jpg");
     }
   }
 
   @media (max-width: $mobile-width-only) {
     background-size: 320px;
-    background-image: url('../img/introduction-mobile.png');
+    background-image: url('../img/introduction-mobile.jpg');
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/introduction-mobile@2x.png");
+      background-image: url("../img/introduction-mobile@2x.jpg");
     }
   }
 }
