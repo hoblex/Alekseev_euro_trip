@@ -1,3 +1,57 @@
 .place-card {
   max-width: 350px;
+  position: relative;
+
+  :hover .place-card__link {
+    display: flex;
+  }
+}
+
+.place-card__image {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 350px;
+  height: 430px;
+}
+
+.place-card__title {
+  display: flex;
+  min-width: 215px;
+  height: 63px;
+  background-color: $basic-white;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: calc((100% - 215px) * 0.5);
+  color: $basic-gray;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.place-card__link {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  position: absolute;
+  width: 350px;
+  height: 430px;
+  top: 0;
+  background-color: $basic-black-70;
+  color: $basic-white;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: calc((100% - 266px) * 0.5);
+    top: calc((100% - 77px) * 0.5);
+    width: 266px;
+    height: 77px;
+    border: 1px solid $basic-white-70;
+  }
 }
