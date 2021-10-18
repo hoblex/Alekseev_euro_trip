@@ -1,7 +1,7 @@
 .regular-button {
   display: flex;
   flex-direction: column;
-  min-width: 260px;
+  min-width: 250px;
   max-width: 292px;
   height: 52px;
   padding: 0;
@@ -14,11 +14,11 @@
   line-height: 14px;
   cursor: pointer;
   background-color: $basic-accent;
+  color: $basic-white;
 
   &:hover,
   &:focus {
     background-color: $basic-accent-hover;
-    color: $basic-white;
   }
 
   &:active {
