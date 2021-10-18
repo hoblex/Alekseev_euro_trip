@@ -36,3 +36,24 @@
 //     }
 //   }
 // });
+
+const placeCardList = Array.from(document.querySelectorAll('.place-card__link'));
+const buttonNavList = Array.from(document.querySelectorAll('.slider-nav__button'));
+const overviewsList = Array.from(document.querySelectorAll('.overviews__item'));
+
+const changeOverviewsListSlide = (slideIndex) => {
+    buttonNavList.forEach((unit, number) => {
+        number === slideIndex ? unit.classList.add('slider-nav__button--current') : unit.classList.remove('slider-nav__button--current');
+    });
+    overviewsList.forEach((elem, index) => index === slideIndex ? elem.classList.add('overviews__item--current') : elem.classList.remove('overviews__item--current'));
+}
+
+placeCardList.forEach((item) => item.addEventListener('click', (evt) => {
+    const selectedIndex = placeCardList.indexOf(evt.target);
+    changeOverviewsListSlide(selectedIndex);
+}));
+
+buttonNavList.forEach((item) => item.addEventListener('click', (evt) => {
+    const selectedIndex = buttonNavList.indexOf(evt.target);
+    changeOverviewsListSlide(selectedIndex);
+}));

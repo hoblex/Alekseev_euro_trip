@@ -7,3 +7,21 @@
     background-image: url("../img/europe-map@2x.png");
   }
 }
+
+.overviews__nav {
+  margin-left: 0;
+  margin-right: auto;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 902px;
+}
+
+.overviews__item {
+  display: none;
+
+  &--current {
+    display: block;
+  }
+}
