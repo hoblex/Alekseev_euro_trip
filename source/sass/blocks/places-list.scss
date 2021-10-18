@@ -1,0 +1,21 @@
+.places-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  max-width: 1170px;
+  min-height: 956px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.places-list__item {
+  margin: 0;
+  box-sizing: border-box;
+
+  &:nth-child(3n + 1) {
+    margin: 0 auto;
+  }
+}

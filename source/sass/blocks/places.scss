@@ -1,0 +1,30 @@
+.places {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1170px;
+}
+
+.places__header {
+  margin: 0;
+  width: 358px;
+  color: $basic-gray;
+  font-weight: 600;
+  font-size: 55px;
+  line-height: 80px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: 0px;
+    left: 0;
+    height: 4px;
+    width: 229px;
+    background-color: $basic-accent;
+  }
+}
+
+.places__decription {
+  color: $basic-gray-70;
+  margin: 0;
+}
