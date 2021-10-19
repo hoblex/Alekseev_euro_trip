@@ -57,3 +57,74 @@ buttonNavList.forEach((item) => item.addEventListener('click', (evt) => {
     const selectedIndex = buttonNavList.indexOf(evt.target);
     changeOverviewsListSlide(selectedIndex);
 }));
+
+const modalWindow = document.querySelector('.modal-buy');
+
+const modalWindowClose = modalWindow.querySelector('.modal-buy__close');
+const overviewButtonOpenModal = document.querySelector('.overview__order-link');
+
+
+overviewButtonOpenModal.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    modalWindow.classList.add('modal-buy--show');
+});
+
+const keyDownHandler = function (evt) {
+    console.log('sdfsdf');
+    const handler = function (event){
+        if (event.keyCode === 27) {
+            if (modalWindow.classList.contains('modal-buy--show')) {
+                evt.preventDefault();
+                modalWindow.classList.remove('modal-buy--show');
+            }
+        }
+        document.removeEventListener('keydown', handler);
+    }
+    return handler;
+}
+
+modalWindowClose.addEventListener('click', (evt) => {
+    if (modalWindow.classList.contains('modal-buy--show')) {
+       evt.preventDefault();
+       modalWindow.classList.remove('modal-buy--show');
+     }
+    document.addEventListener('keydown', keyDownHandler);
+});
+
+const modalLabelList = Array.from(modalWindow.querySelectorAll('.modal-buy__form-label'));
+const modalInputPhone = modalWindow.querySelector('.modal-buy__form-control[type="tel"]');
+const modalInputEmail = modalWindow.querySelector('.modal-buy__form-control[type="email"]');
+const modalFormSubmit = modalWindow.querySelector('.modal-buy__form');
+const modalLabelError = Array.from(modalWindow.querySelectorAll('.modal-buy__form-control-error'))
+
+
+modalInputPhone.addEventListener('invalid', (evt) => {
+    modalInputPhone.setCustomValidity(' ');
+});
+
+modalInputEmail.addEventListener('invalid', (evt) => {
+    modalInputEmail.setCustomValidity(' ');
+});
+
+modalFormSubmit.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+});
+
+modalFormSubmit.addEventListener('click', (evt) => {
+    // const phoneExp = new RegExp("[0-9]{10}");
+    // const phoneNumber = modalInputPhone.value;
+    // console.log(modalLabelError);
+    // if(!phoneExp.test(phoneNumber)) {
+    //     modalLabelError[0].style.display = "block";
+    // } else {
+    //     modalLabelError[0].style.display = "none";
+    // }
+    //
+    // const emailExp = new RegExp("/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$/");
+    // const emailAddress = modalInputEmail.value;
+    // if(!emailExp.test(emailAddress)) {
+    //     modalLabelError[1].style.display = "block";
+    // } else {
+    //     modalLabelError[1].style.display = "none";
+    // }
+});

@@ -1,9 +1,13 @@
 .review {
   background-color: $basic-white;
+  max-width: 382px;
+  box-sizing: border-box;
 }
 
 .review__title {
-  margin: 0;
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-bottom: 30px;
   font-weight: 500;
   font-size: 30px;
   line-height: 37px;
@@ -16,13 +20,25 @@
     height: 1px;
     background-color: $basic-accent;
     left: 0;
-    top: 37px;
+    top: 47px;
   }
 }
 
 .review__text {
   font-size: 14px;
   color: $basic-gray-70;
+  max-width: 322px;
+  margin-left: 30px;
+  margin-bottom: 35px;
+}
+
+.review__author {
+  width: 204px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .review__author-name {
@@ -30,21 +46,10 @@
   color: $basic-gray;
   font-weight: 500;
   line-height: 20px;
-  width: 208px;
-  padding-left: 45px;
   font-style: normal;
+}
 
-  &::before {
-    position: absolute;
-    content: "";
-    width: 38px;
-    height: 38px;
-    left: 0;
-    background-repeat: no-repeat;
-    background-image: url("../img/avatar-vlada.png");
-
-    @media (min-resolution: 2dppx) {
-      background-image: url("../img/avatar-vlada@2x.jpg");
-    }
-  }
+.review__author-image {
+  width: 38px;
+  height: 38px;
 }

@@ -122,18 +122,26 @@
                     <p  class="overview__text">На севере Греции находится один из крупнейших комплексов монастырей, расположенных на вершинах скал. Название его «Метеора» буквально переводится как «висящие в воздухе». Этот монастырь основная цель нашего путешествия в Греции. После покарения скал из песчанника и обломочной горной породы, достигающих в высоту 600 метров, наградой будет неописуемая красота природы и атмосфера, царящая в монастырях Метеоры. </p>
                     <a class="regular-button overview__order-link">Купить тур сейчас</a>
                     <picture class="overview__image">
-                            <source type="image/webp" media="(max-width: 767px)" srcset="img/greece-overview-mobile.webp 1x, img/greece-overview-mobile@2x.webp 2x">
-                            <source type="image/webp" media="(max-width: 1023px)" srcset="img/greece-overview-tablet.webp 1x, img/greece-overview-tablet@2x.webp 2x">
-                            <source type="image/webp" srcset="img/greece-overview-desktop.webp 1x, img/greece-overview-desktop@2x.webp 2x">
+                        <source type="image/webp" media="(max-width: 767px)" srcset="img/greece-overview-mobile.webp 1x, img/greece-overview-mobile@2x.webp 2x">
+                        <source type="image/webp" media="(max-width: 1023px)" srcset="img/greece-overview-tablet.webp 1x, img/greece-overview-tablet@2x.webp 2x">
+                        <source type="image/webp" srcset="img/greece-overview-desktop.webp 1x, img/greece-overview-desktop@2x.webp 2x">
 
-                            <source media="(max-width: 767px)" srcset="img/greece-overview-mobile.jpg 1x, img/greece-overview-mobile@2x.jpg 2x">
-                            <source media="(max-width: 1023px)" srcset="img/greece-overview-tablet.jpg 1x, img/greece-overview-tablet@2x.jpg 2x">
-                            <img src="img/greece-overview-desktop.jpg" srcset="img/greece-overview-desktop@2x.jpg 2x" alt="Туристическая достопримечательность Греции" width="430" height="596">
-                        </picture>
+                        <source media="(max-width: 767px)" srcset="img/greece-overview-mobile.jpg 1x, img/greece-overview-mobile@2x.jpg 2x">
+                        <source media="(max-width: 1023px)" srcset="img/greece-overview-tablet.jpg 1x, img/greece-overview-tablet@2x.jpg 2x">
+                        <img src="img/greece-overview-desktop.jpg" srcset="img/greece-overview-desktop@2x.jpg 2x" alt="Туристическая достопримечательность Греции" width="430" height="596">
+                    </picture>
                     <div  class="overview__review   review">
                         <h4 class="review__title">Отзывы</h4>
                         <p  class="review__text">Метеоры в Греции можно сравнить разве что с Монсерратт в Испании. Такие же высоченные скалы. Но здесь потрясает масштаб. Огромная территория, высоко в горах. Ощущение такое, как будто стоишь на краю света!</p>
-                        <cite class="review__author-name">Влада Голицина</cite>
+                        <cite class="review__author">
+                            <picture class="review__author-image">
+                                <source type="image/webp" srcset="img/avatar-vlada.webp 1x, img/avatar-vlada@2x.webp 2x">
+                                <img src="img/avatar-vlada.png" srcset="img/avatar-vlada@2x.png 2x" alt="Аватар автора" width="38" height="38">
+                            </picture>
+                            <span   class="review__author-name">
+                            Влада Голицина
+                            </span>
+                        </cite>
                     </div>
                 </div>
             </div>
@@ -335,12 +343,15 @@
     <h3  class="modal-buy__title">Купить тур</h3>
     <form action="https://echo.htmlacademy.ru"  method="get"  class="modal-buy__form">
         <label class="modal-buy__form-label">
-            <input type="tel"  placeholder="+7 Введите 10 цифр номера"  class="modal-buy__form-control" required>
+            <span   class="modal-buy__form-control-error">Данные не верны</span>
+            <span   class="modal-buy__form-control-prefix">+7</span>
+            <input type="tel"  placeholder="Введите 10 цифр номера"  class="modal-buy__form-control" pattern="[0-9]{10}" required>
         </label>
         <label class="modal-buy__form-label">
-            <input type="email"  placeholder="E-mail"  class="modal-buy__form-control">
+            <span   class="modal-buy__form-control-error">Данные не верны</span>
+            <input type="email"  placeholder="E-mail"  class="modal-buy__form-control" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/">
         </label>
-        <button class="modal-buy__form-submit" type="submit">Отправить</button>
+        <button class="regular-button  modal-buy__form-submit" type="submit">Отправить</button>
     </form>
     <button type="button" aria-label="Закрыть" class="modal-buy__close"></button>
 </section>

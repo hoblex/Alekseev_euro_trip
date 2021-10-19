@@ -1,6 +1,6 @@
 .overview {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   max-width: 1170px;
   height: 596px;
@@ -12,7 +12,9 @@
   font-weight: 600;
   color: $basic-gray;
   position: relative;
-  margin: 0;
+  margin-left: 0;
+  margin-bottom: 53px;
+  margin-top: 0;
 
   &::after {
     position: absolute;
@@ -26,14 +28,18 @@
 }
 
 .overview__text {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 50px;
   color: $basic-gray-70;
   max-width: 370px;
+  letter-spacing: -0.47px;
 }
 
 .overview__review {
   width: 382px;
   height: 367px;
+  margin-left: -112px;
+  margin-top: 114px;
 }
 
 .overview__order-link {
@@ -44,4 +50,5 @@
 .overview__image {
   width: 430px;
   height: 596px;
+  margin-left: 100px;
 }
