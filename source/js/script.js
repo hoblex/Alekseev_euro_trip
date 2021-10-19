@@ -63,68 +63,85 @@ const modalWindow = document.querySelector('.modal-buy');
 const modalWindowClose = modalWindow.querySelector('.modal-buy__close');
 const overviewButtonOpenModal = document.querySelector('.overview__order-link');
 
+const modalInputPhone = modalWindow.querySelector('.modal-buy__form-control[type="tel"]');
+const modalInputEmail = modalWindow.querySelector('.modal-buy__form-control[type="email"]');
+const modalForm = modalWindow.querySelector('.modal-buy__form');
+const modalFormSubmitButton = modalWindow.querySelector('.modal-buy__form-submit');
+const modalLabelError = Array.from(modalWindow.querySelectorAll('.modal-buy__form-control-error'))
+
+const keyDownHandler = function (evt) {
+    const handler = function (event){
+        if (event.keyCode === 27) {
+            if (modalWindow.classList.contains('modal-buy--show')) {
+                modalWindow.classList.remove('modal-buy--show');
+                modalForm.reset();
+                modalLabelError[0].style.display = "none";
+                modalLabelError[1].style.display = "none";
+            }
+        }
+        document.removeEventListener(evt, handler);
+    }
+    return handler;
+}
 
 overviewButtonOpenModal.addEventListener('click', (evt) => {
     evt.preventDefault();
     modalWindow.classList.add('modal-buy--show');
+    document.addEventListener('keydown', keyDownHandler('keydown'));
+    modalInputPhone.setCustomValidity('');
+    modalForm.reset();
+    modalLabelError[0].style.display = "none";
+    modalLabelError[1].style.display = "none";
 });
-
-const keyDownHandler = function (evt) {
-    console.log('sdfsdf');
-    const handler = function (event){
-        if (event.keyCode === 27) {
-            if (modalWindow.classList.contains('modal-buy--show')) {
-                evt.preventDefault();
-                modalWindow.classList.remove('modal-buy--show');
-            }
-        }
-        document.removeEventListener('keydown', handler);
-    }
-    return handler;
-}
 
 modalWindowClose.addEventListener('click', (evt) => {
     if (modalWindow.classList.contains('modal-buy--show')) {
        evt.preventDefault();
        modalWindow.classList.remove('modal-buy--show');
-     }
-    document.addEventListener('keydown', keyDownHandler);
+        modalForm.reset();
+        modalLabelError[0].style.display = "none";
+        modalLabelError[1].style.display = "none";
+    }
 });
 
-const modalLabelList = Array.from(modalWindow.querySelectorAll('.modal-buy__form-label'));
-const modalInputPhone = modalWindow.querySelector('.modal-buy__form-control[type="tel"]');
-const modalInputEmail = modalWindow.querySelector('.modal-buy__form-control[type="email"]');
-const modalFormSubmit = modalWindow.querySelector('.modal-buy__form');
-const modalLabelError = Array.from(modalWindow.querySelectorAll('.modal-buy__form-control-error'))
+modalInputPhone.addEventListener('keydown', keyDownHandler('keydown'));
+modalInputEmail.addEventListener('keydown', keyDownHandler('keydown'));
 
+modalInputPhone.addEventListener('input', (evt)=> {
+    if(modalInputPhone.validity.patternMismatch || (modalInputPhone.value === '')) {
+        modalLabelError[0].style.display = "block";
+        modalInputPhone.setCustomValidity('');
+    } else {
+        modalLabelError[0].style.display = "none";
+    }
+})
 
-modalInputPhone.addEventListener('invalid', (evt) => {
-    modalInputPhone.setCustomValidity(' ');
+modalInputEmail.addEventListener('input', (evt)=> {
+    if(modalInputEmail.validity.typeMismatch) {
+        modalLabelError[1].style.display = "block";
+    } else {
+        modalLabelError[1].style.display = "none";
+    }
+})
+
+modalFormSubmitButton.addEventListener('click', (evt) => {
+    if(modalInputPhone.validity.patternMismatch || (modalInputPhone.value === '')) {
+        modalLabelError[0].style.display = "block";
+    } else {
+        modalLabelError[0].style.display = "none";
+    }
+
+    if(modalInputEmail.validity.typeMismatch) {
+        modalLabelError[1].style.display = "block";
+    } else {
+        modalLabelError[1].style.display = "none";
+    }
 });
 
-modalInputEmail.addEventListener('invalid', (evt) => {
-    modalInputEmail.setCustomValidity(' ');
-});
-
-modalFormSubmit.addEventListener('submit', (evt) => {
+modalForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
-});
+    modalInputPhone.setCustomValidity('');
 
-modalFormSubmit.addEventListener('click', (evt) => {
-    // const phoneExp = new RegExp("[0-9]{10}");
-    // const phoneNumber = modalInputPhone.value;
-    // console.log(modalLabelError);
-    // if(!phoneExp.test(phoneNumber)) {
-    //     modalLabelError[0].style.display = "block";
-    // } else {
-    //     modalLabelError[0].style.display = "none";
-    // }
-    //
-    // const emailExp = new RegExp("/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$/");
-    // const emailAddress = modalInputEmail.value;
-    // if(!emailExp.test(emailAddress)) {
-    //     modalLabelError[1].style.display = "block";
-    // } else {
-    //     modalLabelError[1].style.display = "none";
-    // }
+    modalForm.reset();
+    modalWindow.classList.remove('modal-buy--show');
 });

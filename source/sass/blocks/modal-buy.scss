@@ -75,6 +75,10 @@
 }
 
 .modal-buy__form-control {
+  font-size: 14px;
+  line-height: 17px;
+  font-family: inherit;
+
   &::placeholder {
     color: $modal-text;
     font-size: 14px;
