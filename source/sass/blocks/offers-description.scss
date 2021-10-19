@@ -1,0 +1,68 @@
+.offers-description {
+  display: flex;
+  width: 310px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.offers-description__title {
+  color: $basic-gray;
+  font-size: 55px;
+  line-height: 90px;
+  font-weight: 600;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 175px;
+    height: 3px;
+    background-color: $basic-accent;
+    left: 0;
+    top: 90px;
+  }
+}
+
+.offers-description__text {
+  color: $basic-gray-70;
+  width: 306px;
+}
+
+.offers-description__contact {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.offers-description__contact-title {
+  color: $basic-black;
+  font-size: 22px;
+  line-height: 34px;
+  font-weight: 500;
+}
+
+.offers-description__contact-phone-number {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  color: $system-black;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 32px;
+
+  &:hover {
+    color: $basic-accent;
+
+    & .offers-description__contact-phone-icon {
+      stroke: $basic-accent;
+    }
+  }
+}
+
+.offers-description__contact-phone-icon {
+  stroke: $basic-black;
+  fill: none;
+  width: 30px;
+  height: 30px;
+}

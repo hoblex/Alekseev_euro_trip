@@ -2,35 +2,44 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  padding-top: 185px;
-  padding-left: 1175px;
+  margin: 0 auto 200px auto;
+  max-width: 1170px;
+  height: 860px;
   color: $basic-white;
-  background-size: 1920px;
-  min-height: 860px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url('../img/introduction-desktop.jpg');
+  position: relative;
 
-  @media (min-resolution: 2dppx) {
-    background-image: url("../img/introduction-desktop@2x.jpg");
-  }
-
-  @media (max-width: $desktop-width - 1) {
-    background-size: 768px;
-    background-image: url('../img/introduction-tablet.jpg');
+  &::before {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    width: 1920px;
+    background-size: 1920px;
+    height: 860px;
+    left: -375px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../img/introduction-desktop.jpg');
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/introduction-tablet@2x.jpg");
+      background-image: url("../img/introduction-desktop@2x.jpg");
     }
-  }
 
-  @media (max-width: $mobile-width-only) {
-    background-size: 320px;
-    background-image: url('../img/introduction-mobile.jpg');
+    @media (max-width: $desktop-width - 1) {
+      background-size: 768px;
+      background-image: url('../img/introduction-tablet.jpg');
 
-    @media (min-resolution: 2dppx) {
-      background-image: url("../img/introduction-mobile@2x.jpg");
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/introduction-tablet@2x.jpg");
+      }
+    }
+
+    @media (max-width: $mobile-width-only) {
+      background-size: 320px;
+      background-image: url('../img/introduction-mobile.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/introduction-mobile@2x.jpg");
+      }
     }
   }
 }
@@ -40,6 +49,7 @@
   font-weight: 600;
   line-height: 80px;
   max-width: 412px;
+  margin-top: 185px;
 }
 
 .introduction__description {
