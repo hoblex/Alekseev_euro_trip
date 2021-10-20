@@ -29,6 +29,7 @@ const modalInputEmail = modalWindow.querySelector('.modal-buy__form-control[type
 const modalForm = modalWindow.querySelector('.modal-buy__form');
 const modalFormSubmitButton = modalWindow.querySelector('.modal-buy__form-submit');
 const modalLabelError = Array.from(modalWindow.querySelectorAll('.modal-buy__form-control-error'))
+const overlay = modalWindow.querySelector('.overlay');
 
 const keyDownHandler = function (evt) {
     const handler = function (event){
@@ -57,15 +58,22 @@ buttonOpenModal.forEach((item) => {
     });
 })
 
-modalWindowClose.addEventListener('click', (evt) => {
-    if (modalWindow.classList.contains('modal-buy--show')) {
-       evt.preventDefault();
-       modalWindow.classList.remove('modal-buy--show');
-        modalForm.reset();
-        modalLabelError[0].style.display = "none";
-        modalLabelError[1].style.display = "none";
+
+const modalCloseHandler = function (evt) {
+    return function(event) {
+        if (modalWindow.classList.contains('modal-buy--show')) {
+            event.preventDefault();
+            modalWindow.classList.remove('modal-buy--show');
+            modalForm.reset();
+            modalLabelError[0].style.display = "none";
+            modalLabelError[1].style.display = "none";
+        }
     }
-});
+}
+
+modalWindowClose.addEventListener('click', modalCloseHandler());
+
+overlay.addEventListener('click', modalCloseHandler());
 
 modalInputPhone.addEventListener('keydown', keyDownHandler('keydown'));
 modalInputEmail.addEventListener('keydown', keyDownHandler('keydown'));

@@ -1,0 +1,9 @@
+.overlay {
+  position: fixed;
+  width: 10000%;
+  height: 10000%;
+  z-index: -1;
+  top: -5000%;
+  left: -5000%;
+  background-color: transparent;
+}
