@@ -1,0 +1,19 @@
+.next-trips {
+  display: flex;
+  width: 354px;
+  flex-direction: column;
+  padding: 0;
+  height: 195px;
+}
+
+.next-trips__title {
+  font-size: 18px;
+  line-height: 32px;
+  font-width: 600;
+}
+
+.next-trips__main-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
