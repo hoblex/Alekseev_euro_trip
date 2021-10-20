@@ -1,0 +1,70 @@
+.form__label {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form__label,
+.form__control {
+  width: 270px;
+  height: 50px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.form__control-error {
+  display: none;
+  position: absolute;
+  color: $basic-accent;
+  font-size: 12px;
+  line-height: 15px;
+  top: -14px;
+}
+
+.form__control {
+  font-size: 14px;
+  line-height: 17px;
+  font-family: inherit;
+
+  &::placeholder {
+    color: $modal-text;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+
+.form__control-error .form__control:invalid {
+  display: block;
+}
+
+.form__control[type="tel"] {
+  padding-left: 51px;
+}
+
+.form__control[type="email"] {
+  padding-left: 15px;
+}
+
+.form__control-prefix {
+  position: absolute;
+  color: $modal-text;
+  font-size: 14px;
+  line-height: 17px;
+  left: 28px;
+  top: 16px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 7px;
+    bottom: 15px;
+    right: 20px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='7' viewBox='0 0 6 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.519 6.028L3.434 4.158L4.998 5.161L5.542 4.243L3.893 3.393L5.542 2.543L4.998 1.608L3.434 2.611L3.519 0.740999H2.448L2.533 2.611L0.952 1.608L0.425 2.543L2.074 3.393L0.425 4.243L0.952 5.161L2.533 4.158L2.448 6.028H3.519Z' fill='%23FE7865'/%3E%3C/svg%3E%0A");
+  }
+}
+
+.form__submit {
+  margin: 0 auto;
+}

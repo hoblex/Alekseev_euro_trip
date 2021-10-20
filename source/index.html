@@ -271,17 +271,22 @@
     </section>
     <section  class="feedback">
         <h2  class="visually-hidden">Форма обратной связи</h2>
-        <p  class="feedback__title">У вас остались вопросы?</p>
-        <p  class="feedback__description">Оставьте свой номер или e-mail и мы свяжемся с Вами</p>
-        <form action="https://echo.htmlacademy.ru"  method="get"  class="feedback__form">
-            <label class="feedback__form-label">
-                <input type="tel"  placeholder="+7 Введите 10 цифр номера"  class="feedback__form-control" required>
-            </label>
-            <label class="feedback__form-label">
-                <input type="email"  placeholder="E-mail"  class="feedback__form-control">
-            </label>
-            <button class="regular-button feedback__form-submit" type="submit">Отправить</button>
-        </form>
+        <div  class="feedback__form-container">
+            <p  class="feedback__title">У вас остались вопросы?</p>
+            <p  class="feedback__description">Оставьте свой номер или e-mail и мы свяжемся с Вами</p>
+            <form action="https://echo.htmlacademy.ru"  method="get"  class="feedback__form form">
+                <label class="form__label">
+                    <span   class="form__control-error">Данные не верны</span>
+                    <span   class="form__control-prefix">+7</span>
+                    <input type="tel"  placeholder="Введите 10 цифр номера"  class="form__control"  pattern="[0-9]{10}" required>
+                </label>
+                <label class="form__label">
+                    <span   class="form__control-error">Данные не верны</span>
+                    <input type="email"  placeholder="E-mail"  class="form__control">
+                </label>
+                <button class="regular-button form__submit" type="submit">Отправить</button>
+            </form>
+        </div>
     </section>
 </main>
 <footer class="footer-main">
